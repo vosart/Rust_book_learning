@@ -31,7 +31,7 @@ fn print_labeled_measurment(value: i32, unit_label: char) {
 }
 
 fn five() -> i32 {
-    5
+    5 //!!! чтобы возратить значение нужно не ставить ";"  !!!
 }
 
 fn plus_one(x: i32) -> i32 {
