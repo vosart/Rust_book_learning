@@ -5,12 +5,10 @@ fn main() {
     let mut f_degree = String::new();
     io::stdin()
         .read_line(&mut f_degree)
-        .expect("Wrong number");
+        .expect("Wrong enter!");
     
-    let f_degree: i32 = match f_degree.trim().parse() {
-        Ok(num) => num,
-        Err(_) => panic!("Wrong number"),
-    };
+    let f_degree: i32 = f_degree.trim().parse().unwrap();
+    
     let c_degree = (f_degree - 32) * 5/9;
     println!("In Celsius it is: {c_degree}");
 }

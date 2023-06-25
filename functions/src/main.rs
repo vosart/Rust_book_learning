@@ -1,3 +1,4 @@
+use std::io;
 fn main() {
     println!("Hello, world!");
     another_function();
@@ -15,7 +16,12 @@ fn main() {
 
     let z = plus_one(5);
     println!("The value of z is: {z}");
-
+    
+    let mut name = String::new();
+    match io::stdin().read_line(&mut name) {
+        Ok(num) => num,
+        Err(_) => panic!("Something wrong!"),
+    };
 }
 
 fn another_function() {
@@ -31,7 +37,8 @@ fn print_labeled_measurment(value: i32, unit_label: char) {
 }
 
 fn five() -> i32 {
-    5 //!!! чтобы возратить значение нужно не ставить ";"  !!!
+//!!! чтобы возратить значение нужно не ставить ";"  !!!
+    5
 }
 
 fn plus_one(x: i32) -> i32 {
