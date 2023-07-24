@@ -26,23 +26,39 @@ fn main() {
 
     // Обновление данных в HashMap
     // 1. Перезапись старых значений
-    let mut scores = HashMap::new();
-    scores.insert(String::from("Blue"), 10);
-    scores.insert(String::from("Blue"), 64);
+    // let mut scores = HashMap::new();
+    // scores.insert(String::from("Blue"), 10);
+    // scores.insert(String::from("Blue"), 64);
 
-    println!("{:?}", scores);
-    // 2. Вставка, если значения по ключу не было
-    scores.entry(String::from("Yellow")).or_insert(50);
-    scores.entry(String::from("Blue")).or_insert(50);
+    // println!("{:?}", scores);
+    // // 2. Вставка, если значения по ключу не было
+    // scores.entry(String::from("Yellow")).or_insert(50);
+    // scores.entry(String::from("Blue")).or_insert(50);
 
-    println!("{:?}", scores);
+    // println!("{:?}", scores);
     // 3. Создание нового значения, на основе старого
-    let text = "hello world wonderful world";
-    let mut map = HashMap::new();
+    let nums = vec![42, 1, 36, 34, 76, 378, 43, 1, 43, 54, 2, 3, 43];
+    let mut table = HashMap::new();
 
-    for word in text.split_whitespace() {
-        let count = map.entry(word).or_insert(0);
-        *count += 1;
+    for num in nums {
+        println!("num: {}", num);
+        println!("table0: {:?}", table);
+        
+        //let count = table.entry(num).or_insert(0);
+        
+        let count = table
+            .entry(num)
+            .and_modify(|e| {*e += 1})
+            .or_insert(1);
+        
+        println!("count: {}", count);
+        //*count += 1;
+        //println!("count1: {}", count);
+        println!("table1: {:?}", table);
     }
-    println!("{:?}", map);
+    
+    println!("{:?}", table);
+    // let v1: Vec<_> = table.iter().map(|(_, v)| v).collect();
+    // println!("{:?}", v1.iter().max().unwrap());
+    
 }
