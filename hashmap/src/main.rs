@@ -29,8 +29,8 @@ fn main() {
     // let mut scores = HashMap::new();
     // scores.insert(String::from("Blue"), 10);
     // scores.insert(String::from("Blue"), 64);
-
     // println!("{:?}", scores);
+
     // // 2. Вставка, если значения по ключу не было
     // scores.entry(String::from("Yellow")).or_insert(50);
     // scores.entry(String::from("Blue")).or_insert(50);
@@ -57,7 +57,7 @@ fn main() {
         println!("table1: {:?}", table);
     }
     
-    println!("{:?}", table);
+    // println!("{:?}", table);
     // let v1: Vec<_> = table.iter().map(|(_, v)| v).collect();
     // println!("{:?}", v1.iter().max().unwrap());
     

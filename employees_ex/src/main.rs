@@ -22,6 +22,11 @@ fn dep_employees_list<'a>(factory: &'a mut HashMap<String, Vec<String>>, departm
 }
 
 fn main() {
+    println!("[INSTRUCTION]");
+    println!("1. add 'Person' to 'Departament'");
+    println!("2. list dep 'Departament'");
+    println!("3. list all\n");
+    
     let mut factory: HashMap<String, Vec<String>> = HashMap::new();
     
     loop {

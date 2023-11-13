@@ -10,7 +10,7 @@ fn main() {
     loop {
         println!("Please input your guess.");
 
-        let mut guess = String::new();
+        let mut guess: String = String::new();
 
         io::stdin()
             .read_line(&mut guess)
@@ -20,8 +20,6 @@ fn main() {
             Ok(num) => num,
             Err(_) => continue,
         };
-
-        println!("You guessed: {guess}");
 
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),

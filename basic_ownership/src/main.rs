@@ -2,6 +2,9 @@ fn main() {
     let s = String::from("hello");
     println!("The string is: {s}");
     takes_ownership(s);
+    /*
+    println!("The string is: {s}"); А так нельзя!
+    */
 
 
     let x = 5;
