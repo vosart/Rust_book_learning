@@ -1,4 +1,4 @@
-use aggregator::{Summary, Tweet};
+use traits::{Summary, Tweet};
 fn main() {
     let tweet = Tweet {
         username: String::from("horse_ebooks"),
