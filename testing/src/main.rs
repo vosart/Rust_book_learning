@@ -18,5 +18,6 @@ fn main() {
     let x = 5;
     let y = MyBox::new(x);
 
-    println!("{}", x == *y);
+    println!("Is x equal to y: {}", x == *y);
+    println!("_______");
 }
