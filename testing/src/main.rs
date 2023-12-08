@@ -1,23 +1,39 @@
-use std::ops::Deref;
-
-impl<T> Deref for MyBox<T> {
-   type Target = T; 
-   
-   fn deref(&self) -> &Self::Target {
-       &self.0
-   }
+#![allow(dead_code)]
+#[derive(Debug)]
+enum Banknotes {
+    Krasnoyarsk,
+    SanktPetersburg,
+    Moscow,
+    Sevastopol,
+    Archangelsk,
+    Yaroslavl,
+    Vladivostok,
+    Khabarovsk,
+    Olympic(Sport),
+    
 }
-struct MyBox<T>(T);
 
-impl<T> MyBox<T> {
-    fn new(x: T) -> MyBox<T> {
-        MyBox(x)
+#[derive(Debug)]
+enum Sport {
+    Snowboard,
+    Football,
+}
+fn value_in_rubles(city: Banknotes) -> u32 {
+    match city {
+        Banknotes::Krasnoyarsk => 10,
+        Banknotes::SanktPetersburg => 50,
+        Banknotes::Moscow => 100,
+        Banknotes::Sevastopol => 200,
+        Banknotes::Archangelsk=> 500,
+        Banknotes::Yaroslavl => 1000,
+        Banknotes::Vladivostok => 2000,
+        Banknotes::Khabarovsk => 5000,
+        Banknotes::Olympic(sport) => {
+            println!("Lucky Olympic! {:?}", sport);
+            100
+        }
     }
 }
 fn main() {
-    let x = 5;
-    let y = MyBox::new(x);
-
-    println!("Is x equal to y: {}", x == *y);
-    println!("_______");
+    println!("{:?}", value_in_rubles(Banknotes::Olympic(Sport::Football)));
 }
