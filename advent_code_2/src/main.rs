@@ -39,9 +39,6 @@ fn id_sum(text: &str) -> i32 {
     answer
 }
 fn main() {
-    
-    
-
     let mut ids_sum = 0;
 
     for line in read_to_string("text.txt").unwrap().lines() {
